@@ -1,9 +1,15 @@
 import './App.css';
+import Header from './Header';
 
 function App() {
   return (
+    //BEM class naming convention
     <div className="App">
-     <h1>Tinder Clone</h1>
+    
+     {/* Header */}
+     <Header  />
+     {/* TinderCards */}
+     {/* SwipeButtons */}
     </div>
   );
 }
