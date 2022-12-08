@@ -12,18 +12,30 @@ function TinderCards() {
             url:"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.celebtattler.com%2Fwp-content%2Fuploads%2F2019%2F05%2Fcharlie-045.jpg&f=1&nofb=1&ipt=90035ba5a725b85b49d567daca52ef8d5852a36486b7f96d0fcde267435af503&ipo=images"
         }
     ]);
+    const swiped = (direction, nameToDelete) => {
+        console.log("removing: " + nameToDelete);
+        // setLastDirection(direction);
+    };
+    const outOfFrame = (name) => {
+        console.log(name + "leftthe screen!");
+    };
   return (
     <div className='tinderCards'>
         <div className="tinderCards__cardContainer">
         {people.map((person) => (
 <TinderCard
 className='swipe'
-key={character.name}
+key={people.name}
 preventSwipe={["up","down"]}
-onSwipe={(dir) => swiped(dir,character.name)}
-onCardLeftScreen={() => outOfFrame(character.name)}
+onSwipe={(dir) => swiped(dir,people.name)}
+onCardLeftScreen={() => outOfFrame(people.name)}
 >
-
+<div
+style={{ backgroundImage: `url(${person.url})`}}
+className="card"
+>
+<h3>{person.name}</h3>
+</div>
 </TinderCard>
       ))}
         </div>
